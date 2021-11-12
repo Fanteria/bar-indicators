@@ -1,1 +1,1 @@
-# bar_indicators
+# bar-indicators
