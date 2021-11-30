@@ -6,6 +6,8 @@
 #define GB 1048576.f
 #define defaultSeparator "/"
 
+std::string icon = "";
+
 int main (int argc, char ** argv) {
     if (argc <= 1)
         exit(0);
@@ -33,7 +35,7 @@ int main (int argc, char ** argv) {
     for (i = (sizeof(mem)/sizeof(*mem)) -1; i > 0; --i) {
         std::cout << mem[i] / GB << separator;
     }
-    std::cout << mem[0] / GB << std::endl;
+    std::cout << mem[0] / GB << " " << icon << std::endl;
 
     return 0;
 }
