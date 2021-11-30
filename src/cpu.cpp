@@ -8,7 +8,11 @@
 #define DIVIDE 1000.f
 #define MHZ "cpu MHz"
 
+std::string icon = "";
+
 int main (int argc, char ** argv) {
+    std::string separator = (argc > 2) ? *(argv + 1) : "/";
+
     std::string line;
     std::ifstream f(FILEPATH);
     int max = 0;
@@ -25,15 +29,14 @@ int main (int argc, char ** argv) {
     }
     f.close();
 
-    int maxHz = 3600; // (argc > 1) ? (stoi(*(argv + 1))) : 3600;
-    std::string separator = (argc > 2) ? *(argv + 2) : "/";
-
+    int maxHz = 3600;
     average /= count;
 
     std::cout << std::fixed << std::setprecision(1);
     std::cout << average / DIVIDE << separator;
     std::cout << max / DIVIDE << separator;
-    std::cout << maxHz / DIVIDE << std::endl;
+    std::cout << maxHz / DIVIDE;
+    std::cout << " " << icon << std::endl;
 
     return 0;
 }
